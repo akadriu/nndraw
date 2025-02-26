@@ -13,7 +13,7 @@ pip install nndraw
 ## Usage
 
 ```python
-from ndraw.drawing import draw_neural_network
+from nndraw.drawing import draw_neural_network
 
 # Define the neural network structure
 parameters = {
