@@ -19,13 +19,8 @@ from ndraw.drawing import draw_neural_network
 parameters = {
     "input_neurons": (20, "lightblue", True),  # 20 input nodes, colored light blue, with labels
     "hidden_layers": [
-<<<<<<< HEAD
-        (3, "Tanh", "lightgreen", True), #three nodes, node color is lightgreen, labels for nodes
-        (4, "ReLU", False) #four nodes, no color specified for nodes, no labels for nodes
-=======
         (3, "ReLU", "lightgreen", True),  # 3 hidden nodes, ReLU activation, light green, labeled
         (4, "ReLU", False)  # 4 hidden nodes, ReLU activation, default color, no labels
->>>>>>> d91ba7d (Updated README.md with better documentation)
     ],  
     "output_neurons": (2, "Softmax", "red", True),  # 2 output nodes, Softmax activation, red, labeled
     "directed_edges": False  # If False, edges are undirected; if True, edges are directed
