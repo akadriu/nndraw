@@ -1,8 +1,10 @@
 # ndraw
 
-nndraw is a Python package that allows users to draw neural networks easily.
+`ndraw` is a Python package that allows users to visualize neural networks easily.
 
 ## Installation
+
+Install `ndraw` using `pip`:
 
 ```bash
 pip install nndraw
@@ -13,19 +15,35 @@ pip install nndraw
 ```python
 from ndraw.drawing import draw_neural_network
 
+# Define the neural network structure
 parameters = {
-    "input_neurons": (20, "lightblue", True), 
+    "input_neurons": (20, "lightblue", True),  # 20 input nodes, colored light blue, with labels
     "hidden_layers": [
+<<<<<<< HEAD
         (3, "Tanh", "lightgreen", True), #three nodes, node color is lightgreen, labels for nodes
         (4, "ReLU", False) #four nodes, no color specified for nodes, no labels for nodes
+=======
+        (3, "ReLU", "lightgreen", True),  # 3 hidden nodes, ReLU activation, light green, labeled
+        (4, "ReLU", False)  # 4 hidden nodes, ReLU activation, default color, no labels
+>>>>>>> d91ba7d (Updated README.md with better documentation)
     ],  
-    "output_neurons": (2, "Softmax", "red", True), 
-    "directed_edges": False #edges are undirected
+    "output_neurons": (2, "Softmax", "red", True),  # 2 output nodes, Softmax activation, red, labeled
+    "directed_edges": False  # If False, edges are undirected; if True, edges are directed
 }  
 
 # Call the function with unpacked parameters
 draw_neural_network(**parameters)
 ```
+
+### Parameters Explained
+`input_neurons` - Tuple `(num_nodes, color, labels)`, defining the number of input neurons, their color, and whether labels are displayed.
+`hidden_layers` - List of tuples `(num_nodes, activation, color, labels)`, where each tuple defines a hidden layer.
+`output_neurons` - Tuple `(num_nodes, activation, color, labels)`, specifying the number of output neurons, their activation function, color, and labels.
+`directed_edges`  - Boolean (`True` or `False`), indicating whether edges between neurons should be directed (arrows) or undirected (lines).
+
+### Notes
+- If a color is not provided, the default color (e.g., `"grey"`) is used.
+- Activation functions are for visualization purposes only (they are not applied computationally).
 
 ## License
 
