@@ -122,15 +122,16 @@ def draw_neural_network(input_neurons, hidden_layers, output_neurons, directed_e
             x, y = pos[node]
             plt.text(x, y, "⋮", fontsize=12, fontweight='bold', color='black', horizontalalignment='center', verticalalignment='center')
 
-    # Restore top labels for each layer
-    label_y_fixed_top = max([v[1] for v in pos.values()]) + 1.0  # Set above the highest node
+    # Top labels for each layer
+    label_y_fixed_top = max([v[1] for v in pos.values()]) * 1.3  # Scale dynamically
+
     layer_labels = ["Input"] + [f"Hidden{idx+1}" for idx in range(len(hidden_layers))] + ["Output"]
     for idx, label in enumerate(layer_labels):
         layer_x_pos = layer_x[idx]
         plt.text(layer_x_pos, label_y_fixed_top, label, horizontalalignment='center', fontsize=10, color='black', fontweight='bold')
 
-    # Ensure bottom labels (activation functions) are displayed
-    activation_y_position = min_y_position - 1.2  # Align below the lowest layer
+    # Bottom labels (activation functions)
+    activation_y_position = min([v[1] for v in pos.values()]) * 1.3  # Scale dynamically
     for x_pos, activation_text in activation_labels:
         plt.text(x_pos, activation_y_position, activation_text, horizontalalignment='left', fontsize=8, color='black', fontstyle='italic')
 
