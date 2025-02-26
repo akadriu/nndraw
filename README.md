@@ -1,10 +1,10 @@
-# ndraw
+# NNDraw
 
 `ndraw` is a Python package that allows users to visualize neural networks easily.
 
 ## Installation
 
-Install `ndraw` using `pip`:
+Install `NNdraw` using `pip`:
 
 ```bash
 pip install nndraw
